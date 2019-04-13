@@ -5,17 +5,6 @@ const parseFilepath = require(`parse-filepath`)
 const fs = require('fs')
 const mkdirp = require('mkdirp')
 
-// make sure quizzes folder and demo.mdx file exist for the filesystem source or it will error
-exports.onPreBootstrap = ({ store }) => {
-  const { program } = store.getState()
-  const dir = path.join(program.directory, 'quizzes')
-  mkdirp.sync(dir)
-  const demoFile = require.resolve(`./quizzes/demo.mdx`)
-  fs.copyFile(demoFile, dir + '/demo-quiz.mdx', err => {
-    if (err) throw err
-    console.log('demo.mdx was copied to /quizzes folder')
-  })
-}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField, createNode } = actions
@@ -51,29 +40,12 @@ exports.onCreateWebpackConfig = ({ stage, loaders, plugins, actions }) => {
       // implement relative path
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
-    /**
-      * When shipping NPM modules, they typically need to be either
-      * pre-compiled or the user needs to add bundler config to process the
-      * files. Gatsby lets us ship the bundler config with the theme, so
-      * we never need a lib-side build step.  Since we dont pre-compile the
-      * theme, this is how we let webpack know how to process files.
-      */
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          include: path.dirname(require.resolve(`gatsby-theme-quiz`)),
-          use: [loaders.js()],
-        },
-      ],
-    }
   }
   )
 }
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-
   const result = await graphql(`
   {
     allMdx(sort: {fields: frontmatter___index}) {
