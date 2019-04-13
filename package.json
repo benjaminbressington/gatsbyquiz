@@ -1,0 +1,42 @@
+{
+  "name": "gatsby-theme-quiz",
+  "version": "0.1.35",
+  "main": "index.js",
+  "repository": "https://github.com/raphadeluca/gatsby-themes.git",
+  "author": "Raphaël De Luca",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf node_modules .cache public",
+    "lint": "./node_modules/.bin/eslint .",
+    "lint:fix": "./node_modules/.bin/eslint . --fix"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.3",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "gatsby": "^2.3.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.3.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
+    "@mdx-js/mdx": "^0.20.3",
+    "@mdx-js/tag": "^0.20.3",
+    "gatsby": "^2.3.9",
+    "gatsby-mdx": "^0.4.4",
+    "gatsby-plugin-compile-es6-packages": "^1.0.6",
+    "gatsby-plugin-emotion": "^4.0.6",
+    "gatsby-source-filesystem": "^2.0.27"
+  }
+}
