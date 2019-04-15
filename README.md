@@ -1,6 +1,3 @@
-# gatsby-theme-quiz
+# gatsby-starter-quiz
 
-!WIP
-
-
-For now, you should install this theme alongside other themes. But having a gatsby-node.js in your root folder querying for Mdx files could lead to collision or undefined errors.
+Create quizzes using Gatsby and MDX
