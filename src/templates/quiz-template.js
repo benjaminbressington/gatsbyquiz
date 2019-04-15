@@ -1,8 +1,6 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
-import { xs } from '../utils/breakpoints'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-import { ScoreContext } from '../contexts/ScoreContext'
 import GlobalStyles from '../components/GlobalStyles'
 import Mcq from '../components/Mcq'
 import Footer from '../components/Footer'
@@ -63,23 +61,18 @@ const QuizFooter = styled.div`
   right: 0;
 `
 
-const QuizTemplate = ({ data, pageContext, location }) => {
-  const [selected, setSelected] = useState(null)
+const QuizTemplate = ({ data, pageContext }) => {
+  const [selected, setSelected] = useState("")
   const [answered, setAnswered] = useState(false)
   const [correct, setCorrect] = useState(false)
-  const { score } = useContext(ScoreContext)
 
   const { body } = data.mdx.code
   const { answers } = data.mdx.frontmatter
-  const { prev, next, totalPoints } = pageContext
-  console.log(xs)
+  const { prev, next } = pageContext
   return (
     <Container>
       <GlobalStyles/>
-      {/* <Animation on answer /> */}
       <QuizHeader>
-        {/* <ProgressBar /> */}
-        {/*! next && answered && <Score /> */}
         <CloseButton />
       </QuizHeader>
       <QuizBody>

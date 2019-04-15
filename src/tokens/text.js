@@ -1,8 +1,8 @@
 export default {
   answerButton: {
-    answer: 'REPONDRE',
-    continue: 'CONTINUER',
-    end: 'TERMINER'
+    answer: 'ANSWER',
+    continue: 'CONTINUE',
+    end: 'END'
 
   },
   feedback: {

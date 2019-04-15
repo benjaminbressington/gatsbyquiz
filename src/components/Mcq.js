@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import RadioItem from './RadioItem'
 import styled from '@emotion/styled'
 import { media } from '../tokens'
@@ -37,6 +38,7 @@ const Mcq = ({
       {answers.map(answer => (
         <RadioItem
           id={answer.value}
+          key={answer.value}
           name={answer.value}
           label={answer.value}
           onChange={handleChange}
@@ -46,6 +48,20 @@ const Mcq = ({
       ))}
     </RadioContainer>
   )
+}
+
+Mcq.propTypes = {
+  answered: PropTypes.bool.isRequired,
+  selected: PropTypes.string.isRequired,
+  setSelected: PropTypes.func.isRequired,
+  setCorrect: PropTypes.func.isRequired,
+  answers: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      correct: PropTypes.bool.isRequired,
+      feedback: PropTypes.srting,
+    })
+  ).isRequired,
 }
 
 export default Mcq

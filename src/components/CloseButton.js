@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { UrlContext } from '../contexts/UrlContext'
-import { xs } from '../utils/breakpoints'
 import { navigate } from 'gatsby'
 import styled from '@emotion/styled'
 import { media } from '../tokens'

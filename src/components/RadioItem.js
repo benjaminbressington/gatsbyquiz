@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { animation, colors, media } from '../tokens'
+import { colors, media } from '../tokens'
 
 const Label = styled.label`
   flex: 100%;
@@ -39,5 +39,13 @@ const RadioItem = ({ checked, name, label, onChange, answered }) => (
     </div>
   </Label>
 )
+
+RadioItem.propTypes = {
+  checked: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  answered: PropTypes.bool.isRequired,
+}
 
 export default RadioItem

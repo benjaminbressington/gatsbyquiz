@@ -4,14 +4,12 @@
  * on close
  */
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 const UrlContext = React.createContext()
 
 function UrlContextProvider (props) {
   const [url, setUrl] = useState('/')
-  console.log('From context url is', url)
-
   let value = { url, setUrl }
 
   return (

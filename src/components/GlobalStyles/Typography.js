@@ -1,6 +1,6 @@
 import React from 'react'
 import { Global, css } from '@emotion/core'
-import { animation, colors, fonts, media } from '../../tokens'
+import { colors, fonts, media } from '../../tokens'
 
 export default () => (
   <Global

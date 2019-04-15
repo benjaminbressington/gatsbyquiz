@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { UrlContext } from '../contexts/UrlContext'
-import { ScoreContext } from '../contexts/ScoreContext'
 import styled from '@emotion/styled'
-import { animation, media, colors, text } from '../tokens'
+import { media, colors, text } from '../tokens'
 
 const FooterContainer = styled.div`
   position: fixed;
@@ -107,12 +107,10 @@ const Footer = ({
   correct,
   next,
 }) => {
-  const { score, handleScore } = useContext(ScoreContext)
   const { url } = useContext(UrlContext)
 
   const handleSubmit = () => {
     if (correct) {
-      handleScore(1)
       setAnswered(!answered)
     } else {
       setAnswered(!answered)
@@ -158,6 +156,14 @@ const Footer = ({
         )}
     </FooterContainer>
   )
+}
+
+Footer.propTypes = {
+  selected: PropTypes.string.isRequired,
+  answered: PropTypes.bool.isRequired,
+  setAnswered: PropTypes.func.isRequired,
+  correct: PropTypes.bool.isRequired,
+  next: PropTypes.string,
 }
 
 export default Footer
