@@ -63,7 +63,7 @@ const QuizFooter = styled.div`
 `
 
 const QuizTemplate = ({ data, pageContext }) => {
-  const [selected, setSelected] = useState("")
+  const [selected, setSelected] = useState('')
   const [answered, setAnswered] = useState(false)
   const [correct, setCorrect] = useState(false)
 

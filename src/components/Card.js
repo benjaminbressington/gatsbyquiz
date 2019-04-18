@@ -12,7 +12,7 @@ const Card = ({
 }) => (
   <Link
     to={link}
-    aria-label={`View ${title}`}
+    aria-label={`View ${ title }`}
     css={css`
       * {
         color: white;
@@ -44,7 +44,7 @@ const Card = ({
           margin-top: 20px;
         }
       }
-      background: ${backgroundColor};
+      background: ${ backgroundColor };
       overflow: hidden;
       border-radius: 5px;
       margin-bottom: '0';

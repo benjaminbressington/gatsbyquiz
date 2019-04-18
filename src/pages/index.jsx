@@ -38,7 +38,7 @@ export default function Index () {
             backgroundColor = '#9bc53d'
             title = "GATSBY"
             description = "Take a little quiz to test your Gatsby knowledges..."
-            link = "mdx-01"
+            link = "gatsby-01"
             />
       </div>
     </Layout >
