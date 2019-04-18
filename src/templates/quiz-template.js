@@ -15,12 +15,11 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
 `
 
 const QuizHeader = styled.div`
   opacity: 0.8;
-  height: 60px;
+  height: 80px;
   width: 100%;
   background: white;
   position: sticky;
@@ -28,6 +27,8 @@ const QuizHeader = styled.div`
 
 `
 const QuizBody = styled.div`
+  /*important for the pre overflow: auto*/
+  width:100%;
   @media ${ media.medium } {
     width: 60%;
     padding-top: 2rem;

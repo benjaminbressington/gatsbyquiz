@@ -6,8 +6,6 @@ export default () => (
     styles={css`
       body {
         margin: 0 auto;
-
-
       }
       * {
         box-sizing: border-box;

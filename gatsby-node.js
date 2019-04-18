@@ -1,18 +1,14 @@
 const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
 const _ = require('lodash')
 const parseFilepath = require(`parse-filepath`)
-const fs = require('fs')
-const mkdirp = require('mkdirp')
-
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField, createNode } = actions
+  const { createNodeField } = actions
 
-  if (node.internal.type === 'Mdx' && node.frontmatter.type === 'quiz') {
+  if (node.internal.type === 'Mdx') {
     const parent = getNode(node.parent)
     const parsedFilePath = parseFilepath(parent.relativePath)
-    const exercise = parsedFilePath.dir
+    const quiz = parsedFilePath.dir
     const quizSlug = (parsedFilePath.name === 'index')
       ? `/`
       : _.kebabCase(`/${ parsedFilePath.dir }${ parsedFilePath.name }/`)
@@ -26,8 +22,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     // folder under the same "exercise"
     createNodeField({
       node,
-      name: 'exercise',
-      value: exercise
+      name: 'quiz',
+      value: quiz
     })
   }
 }
@@ -49,15 +45,13 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
   {
     allMdx(sort: {fields: frontmatter___index}) {
-      group(field: fields___exercise) {
+      group(field: fields___quiz) {
         fieldValue
         totalCount
         edges {
           node {
-            frontmatter {
-              points
-            }
             fields {
+              quiz
               quizSlug
             }
           }
@@ -71,12 +65,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const { group } = result.data.allMdx
 
   group.forEach(exercise => {
-    // We sum the points of each question present in the exercice and pass it
-    // to the context
-    const totalPoints = exercise.edges
-      .map(edge => edge.node.frontmatter.points)
-      .reduce((total, points) => total + points)
-
     exercise.edges.forEach((edge, index) => {
       const next = index === exercise.edges.length - 1 ? null : exercise.edges[index + 1].node
       const prev = index === 0 ? null : exercise.edges[index - 1].node
@@ -86,7 +74,6 @@ exports.createPages = async ({ graphql, actions }) => {
         component: require.resolve(`./src/templates/quiz-template.js`),
         context: {
           quizSlug: edge.node.fields.quizSlug,
-          totalPoints,
           next,
           prev
         }
