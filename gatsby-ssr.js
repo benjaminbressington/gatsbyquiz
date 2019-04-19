@@ -6,6 +6,7 @@ import { UrlContextProvider } from './src/contexts/UrlContext'
 
 const components = {
   Video: props => (
+    <div style={{display: 'flex', justifiyContent: 'center'}}>
     <ReactPlayer
       {...props}
       css={{
@@ -13,6 +14,7 @@ const components = {
         paddingBottom: '1.5rem'
       }}
     />
+    </div>
   ),
   pre: props => {
     const className = props.children.props.className || ''
