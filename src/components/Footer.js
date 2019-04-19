@@ -108,7 +108,7 @@ const Footer = ({
   next,
 }) => {
   const { url } = useContext(UrlContext)
-
+  console.log('answered is ', answered, ' selected is ', selected)
   const handleSubmit = () => {
     if (correct) {
       setAnswered(!answered)
@@ -134,7 +134,7 @@ const Footer = ({
       }
       {!answered
         ? <AnswerButton
-          disabled={selected === null}
+          disabled={selected === ''}
           onClick={handleSubmit}>
           {text.answerButton.answer}
         </AnswerButton>

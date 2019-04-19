@@ -48,9 +48,9 @@ const components = {
   wrapper: ({ children }) => <>{children}</>
 }
 export const wrapRootElement = ({ element }) => (
-  <MDXProvider components={components}>
-    <UrlContextProvider>
+  <UrlContextProvider>
+      <MDXProvider components={components}>
       {element}
+      </MDXProvider>
     </UrlContextProvider>
-  </MDXProvider>
 )
