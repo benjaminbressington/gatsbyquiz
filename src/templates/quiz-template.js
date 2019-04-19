@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { graphql } from 'gatsby'
+import { QuizContextProvider, QuizContextConsumer } from '../contexts/QuizContext'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import GlobalStyles from '../components/GlobalStyles'
 import Mcq from '../components/Mcq'
@@ -63,9 +64,6 @@ const QuizFooter = styled.div`
 `
 
 const QuizTemplate = ({ data, pageContext }) => {
-  const [selected, setSelected] = useState('')
-  const [answered, setAnswered] = useState(false)
-  const [correct, setCorrect] = useState(false)
 
   const { body } = data.mdx.code
   const { answers } = data.mdx.frontmatter
@@ -80,27 +78,19 @@ const QuizTemplate = ({ data, pageContext }) => {
         <MDXRenderer pageContext={pageContext}>
           {body}
         </MDXRenderer>
+        <QuizContextProvider>
         <Mcq
           answers={answers}
-          selected={selected}
-          setSelected={setSelected}
-          answered={answered}
-          setAnswered={setAnswered}
-          correct={correct}
-          setCorrect={setCorrect}
           next={next && next.fields.quizSlug}
           prev={prev && prev.fields.quizSlug}
         />
-      </QuizBody>
       <QuizFooter>
         <Footer
-          selected={selected}
-          answered={answered}
-          setAnswered={setAnswered}
-          correct={correct}
           next={next && next.fields.quizSlug}
         />
       </QuizFooter>
+            </QuizContextProvider>
+      </QuizBody>
     </Container>
   )
 }

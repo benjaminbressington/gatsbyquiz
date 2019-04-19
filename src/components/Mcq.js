@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import PropTypes from 'prop-types'
+import { QuizContext } from '../contexts/QuizContext'
 import RadioItem from './RadioItem'
 import styled from '@emotion/styled'
 import { media } from '../tokens'
@@ -15,13 +16,9 @@ const RadioContainer = styled.div`
   align-items: stretch;
 `
 
-const Mcq = ({
-  answered,
-  answers,
-  selected,
-  setSelected,
-  setCorrect,
-}) => {
+const Mcq = ({answers, next, prev}) => {
+  const { selected, setSelected, answered, setAnswered, correct, setCorrect } = useContext(QuizContext)
+
   const handleChange = answer => {
     const selectedAnswer = answers.filter(ans => ans.value === answer)
     if (selectedAnswer[0].correct) {
@@ -51,10 +48,6 @@ const Mcq = ({
 }
 
 Mcq.propTypes = {
-  answered: PropTypes.bool.isRequired,
-  selected: PropTypes.string.isRequired,
-  setSelected: PropTypes.func.isRequired,
-  setCorrect: PropTypes.func.isRequired,
   answers: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string.isRequired,

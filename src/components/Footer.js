@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import { QuizContext } from '../contexts/QuizContext'
 import { UrlContext } from '../contexts/UrlContext'
 import styled from '@emotion/styled'
 import { media, colors, text } from '../tokens'
@@ -100,13 +101,8 @@ const AnswerButton = styled.button`
     margin-right: 20%;
   }
 `
-const Footer = ({
-  selected,
-  answered,
-  setAnswered,
-  correct,
-  next,
-}) => {
+const Footer = ({next}) => {
+  const { selected, setSelected, answered, setAnswered, correct, setCorrect } = useContext(QuizContext)
   const { url } = useContext(UrlContext)
   console.log('answered is ', answered, ' selected is ', selected)
   const handleSubmit = () => {
@@ -158,12 +154,5 @@ const Footer = ({
   )
 }
 
-Footer.propTypes = {
-  selected: PropTypes.string.isRequired,
-  answered: PropTypes.bool.isRequired,
-  setAnswered: PropTypes.func.isRequired,
-  correct: PropTypes.bool.isRequired,
-  next: PropTypes.string,
-}
 
 export default Footer
