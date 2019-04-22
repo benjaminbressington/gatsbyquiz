@@ -1,5 +1,4 @@
 const path = require('path')
-const emoji = require(`remark-emoji`)
 
 module.exports = {
   siteMetadata: {
