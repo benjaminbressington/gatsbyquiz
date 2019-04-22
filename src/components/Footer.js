@@ -101,7 +101,7 @@ const AnswerButton = styled.button`
     margin-right: 20%;
   }
 `
-const Footer = ({next}) => {
+const Footer = ({ next }) => {
   const { selected, setSelected, answered, setAnswered, correct, setCorrect } = useContext(QuizContext)
   const { url } = useContext(UrlContext)
   console.log('answered is ', answered, ' selected is ', selected)
@@ -153,6 +153,5 @@ const Footer = ({next}) => {
     </FooterContainer>
   )
 }
-
 
 export default Footer

@@ -4,7 +4,7 @@
 
 Create rich quizzes with Gatsby & Mdx.
 
-➡️ **[See a live example](https://inspiring-kare-1888f6.netlify.com/)**
+➡️ **[See a live example](https://gatsby-starter-quiz.netlify.com//)**
 
 ## Installation
 
