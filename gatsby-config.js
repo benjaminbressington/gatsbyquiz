@@ -10,6 +10,7 @@ module.exports = {
     social: { twitter: 'https://twitter.com/raphadeluca/' },
   },
   plugins: [
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-mdx`,
       options: {
