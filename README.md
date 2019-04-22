@@ -26,7 +26,14 @@ $ yarn
 
 ## Usage
 
-Edit and extend your quizzes inside the `quizzes` folder.
+Edit your quizzes inside the `quizzes` folder:
+- create a folder for each quiz
+- create a .mdx file for each question
+- put your answers in the frontmatter
+- give an index to your question to put them in a specific order
+- write your question
+
+Look at the examples in the quizzes folder
 
 ```bash
 # To develop & write
