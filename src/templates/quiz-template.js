@@ -64,7 +64,6 @@ const QuizFooter = styled.div`
 `
 
 const QuizTemplate = ({ data, pageContext }) => {
-
   const { body } = data.mdx.code
   const { answers } = data.mdx.frontmatter
   const { prev, next } = pageContext
@@ -79,17 +78,17 @@ const QuizTemplate = ({ data, pageContext }) => {
           {body}
         </MDXRenderer>
         <QuizContextProvider>
-        <Mcq
-          answers={answers}
-          next={next && next.fields.quizSlug}
-          prev={prev && prev.fields.quizSlug}
-        />
-      <QuizFooter>
-        <Footer
-          next={next && next.fields.quizSlug}
-        />
-      </QuizFooter>
-            </QuizContextProvider>
+          <Mcq
+            answers={answers}
+            next={next && next.fields.quizSlug}
+            prev={prev && prev.fields.quizSlug}
+          />
+          <QuizFooter>
+            <Footer
+              next={next && next.fields.quizSlug}
+            />
+          </QuizFooter>
+        </QuizContextProvider>
       </QuizBody>
     </Container>
   )

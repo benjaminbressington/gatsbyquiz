@@ -67,4 +67,4 @@ answers: [
 ```
 
 - index allows you to order yours slides. Must be a string ('1').
-- answers is an array with as many objects as you want. It will create your radio buttons. You can create true/false question or multiple choices quizzes.
+- answers is an array with as many objects as you want. It will create your radio buttons. You can create true/false questions or multiple choices quizzes.
