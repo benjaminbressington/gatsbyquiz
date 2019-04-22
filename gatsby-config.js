@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    // siteUrl: config.siteUrl + pathPrefix,
+    siteUrl: 'https://inspiring-kare-1888f6.netlify.com/',
     title: 'Quiz with Gatsby + MDX',
     description: 'Just create beautiful quizzes with Gatsby and MDX!',
     keywords: ['Quiz', 'Gatsby', 'MDX'],
