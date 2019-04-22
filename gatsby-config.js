@@ -1,4 +1,5 @@
 const path = require('path')
+const emoji = require(`remark-emoji`)
 
 module.exports = {
   siteMetadata: {
@@ -12,7 +13,17 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-mdx`,
-      options: {}
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 300,
+              sizeByPixelDensity: true,
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,

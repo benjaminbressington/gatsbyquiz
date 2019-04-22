@@ -1,10 +1,8 @@
-# gatsby-starter-quiz
-
-Create rich quizzes using Gatsby and MDX
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b6e54a57-aa24-436f-be39-f075b842f3bb/deploy-status)](https://app.netlify.com/sites/inspiring-kare-1888f6/deploys)
 
-Create ruch quizzes using Gatsby & Mdx.
+# gatsby-starter-quiz
+
+Create rich quizzes with Gatsby & Mdx.
 
 ➡️ **[See a live example](https://inspiring-kare-1888f6.netlify.com/)**
 
@@ -35,17 +33,7 @@ Edit your quizzes inside the `quizzes` folder:
 
 Look at the examples in the quizzes folder
 
-```bash
-# To develop & write
-$ yarn develop
-
-# To build
-$ yarn build
-```
-
 ## Writing
-
-
 
 Examples:
 

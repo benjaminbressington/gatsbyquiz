@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { QuizContext } from '../contexts/QuizContext'
 import RadioItem from './RadioItem'
@@ -16,8 +16,8 @@ const RadioContainer = styled.div`
   align-items: stretch;
 `
 
-const Mcq = ({answers, next, prev}) => {
-  const { selected, setSelected, answered, setAnswered, correct, setCorrect } = useContext(QuizContext)
+const Mcq = ({ answers, next }) => {
+  const { selected, setSelected, answered, setCorrect } = useContext(QuizContext)
 
   const handleChange = answer => {
     const selectedAnswer = answers.filter(ans => ans.value === answer)
