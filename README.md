@@ -67,8 +67,7 @@ For a full explanation, read the MDX docs and the gatsby-MDX implementation.
 
 ### :four: Link it from the home page
 
-In the `/pages/index.js` file create a link to your quiz with the Card component.
-
+In the `/pages/index.js` file create a link to your quiz with the Card component. If your Mdx files are in the `/quizzes/css` folder, you can point to the first file of your quiz (let's say `01.mdx`) with `link="css-01"`.
 ```js
   <Card
     backgroundColor='#5bc0eb'
@@ -80,7 +79,7 @@ In the `/pages/index.js` file create a link to your quiz with the Card component
 
 ### :five: Deploy
 - create a repository on github with your project
-- deploy it on Netlify
+- deploy it on [Netlify](https://www.netlify.com/)
 
 ## :art: Configuration
-
+You can change the feedback text, the footer colors in the appropriate files under the `/tokens` folder.
