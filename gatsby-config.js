@@ -15,8 +15,10 @@ module.exports = {
       resolve: `gatsby-mdx`,
       options: {
         gatsbyRemarkPlugins: [
+          `gatsby-remark-emoji`,
           {
-            resolve: `gatsby-remark-images`,
+            resolve:
+            `gatsby-remark-images`,
             options: {
               maxWidth: 200,
               sizeByPixelDensity: true,

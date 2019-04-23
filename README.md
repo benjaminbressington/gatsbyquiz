@@ -1,7 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b6e54a57-aa24-436f-be39-f075b842f3bb/deploy-status)](https://app.netlify.com/sites/inspiring-kare-1888f6/deploys)
 
-# gatsby-starter-quiz
-
+# :grapes: gatsby-starter-quiz
 Create rich quizzes with Gatsby & Mdx.
 
 ➡️ **[See a live example](https://gatsby-starter-quiz.netlify.com//)**
@@ -24,21 +23,18 @@ $ yarn
 
 ## Usage
 
-Edit your quizzes inside the `quizzes` folder:
+With the gatsby-starter-quiz you can create
+### :one: Files
+Edit your quizzes inside the `/quizzes` folder:
 - create a folder for each quiz
 - create a .mdx file for each question
+
+### :two: Frontmatter
 - put your answers in the frontmatter. It's just an array of objects.
   - Each object is an answer with 2 keys:
     - value: a string (the text that will be displayed)
     - correct: a boolean (true, if correct)
-- give an index to your question to put them in a specific order
-- write your question
-
-Look at the examples in the quizzes folder
-
-## Writing
-
-Examples:
+- give an index to your question to put them in a specific order (must be a string!)
 
 ```md
 ---
@@ -64,5 +60,15 @@ answers: [
 ---
 ```
 
-- index allows you to order yours slides. Must be a string ('1').
-- answers is an array with as many objects as you want. It will create your radio buttons. You can create true/false questions or multiple choices quizzes.
+### :three: Body
+- write your question and let your creativity take the power with MDX
+
+Look at the examples in the quizzes folder to see how you can use React within a Markdown file (That's MDX!).
+For a full explanation, read the MDX docs and the gatsby-MDX implementation.
+
+### :four: Link it from home page
+-
+
+
+### Configuration
+
