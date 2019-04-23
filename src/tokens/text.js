@@ -1,12 +1,11 @@
 export default {
   answerButton: {
-    answer: 'ANSWER',
-    continue: 'CONTINUE',
-    end: 'END'
-
+    answer: "ANSWER",
+    continue: "CONTINUE",
+    end: "END"
   },
   feedback: {
-    correct: 'Correct!',
-    incorrect: 'Nope...'
+    correct: "Correct!",
+    incorrect: "Nope..."
   }
-}
+};

@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import { QuizContext } from '../contexts/QuizContext'
-import { UrlContext } from '../contexts/UrlContext'
-import styled from '@emotion/styled'
-import { media, colors, text } from '../tokens'
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import { QuizContext } from '../contexts/QuizContext';
+import { UrlContext } from '../contexts/UrlContext';
+import styled from '@emotion/styled';
+import { media, colors, text } from '../tokens';
 
 const FooterContainer = styled.div`
   position: fixed;
@@ -15,16 +15,18 @@ const FooterContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   z-index: 1;
   @media ${ media.medium } {
-      flex-direction: row;
-      justify-content: space-between;
-      min-height: 150px;
-      background-color: rgba(255,255,255,0.6);
-    }
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 150px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
   transition: background-color 200ms linear;
-  ${ ({ correct }) => correct && `
+  ${ ({ correct }) =>
+    correct &&
+    `
     height: 200px;
     background-color: ${ colors.green300 };
     @media ${ media.medium } {
@@ -32,7 +34,9 @@ const FooterContainer = styled.div`
       background-color: ${ colors.green300 };
     }
   ` }
-  ${ ({ incorrect }) => incorrect && `
+  ${ ({ incorrect }) =>
+    incorrect &&
+    `
     height: 200px;
     background-color: ${ colors.red300 };
     @media ${ media.medium } {
@@ -42,7 +46,9 @@ const FooterContainer = styled.div`
   ` }
 `
 const Feedback = styled.div`
-  ${ ({ display }) => display && `
+  ${ ({ display }) =>
+    display &&
+    `
     margin-top: 1rem;
     color: white;
     font-size: 2rem;
@@ -72,11 +78,15 @@ const ContinueButton = styled(Link)`
     margin-bottom: 0;
     min-width: 150px;
   }
-  ${ ({ correct }) => correct && `
+  ${ ({ correct }) =>
+    correct &&
+    `
     background-color: ${ colors.green600 };
     border: 2px solid ${ colors.green400 };
   ` }
-  ${ ({ incorrect }) => incorrect && `
+  ${ ({ incorrect }) =>
+    incorrect &&
+    `
     background-color: ${ colors.red600 };
     border: 2px solid ${ colors.red400 };
   ` }
@@ -102,7 +112,14 @@ const AnswerButton = styled.button`
   }
 `
 const Footer = ({ next }) => {
-  const { selected, setSelected, answered, setAnswered, correct, setCorrect } = useContext(QuizContext)
+  const {
+    selected,
+    setSelected,
+    answered,
+    setAnswered,
+    correct,
+    setCorrect
+  } = useContext(QuizContext)
   const { url } = useContext(UrlContext)
   console.log('answered is ', answered, ' selected is ', selected)
   const handleSubmit = () => {
@@ -118,40 +135,39 @@ const Footer = ({ next }) => {
       incorrect={!correct && answered}
     >
       {!answered && <Feedback />}
-      {answered && correct &&
+      {answered && correct && (
         <Feedback display={answered}>
           <p>{text.feedback.correct}</p>
         </Feedback>
-      }
-      {answered && !correct &&
+      )}
+      {answered && !correct && (
         <Feedback display={answered}>
           <p>{text.feedback.incorrect}</p>
         </Feedback>
-      }
-      {!answered
-        ? <AnswerButton
-          disabled={selected === ''}
-          onClick={handleSubmit}>
+      )}
+      {!answered ? (
+        <AnswerButton disabled={selected === ''} onClick={handleSubmit}>
           {text.answerButton.answer}
         </AnswerButton>
-        : (answered && next
-          ? <ContinueButton
-            correct={correct && answered}
-            incorrect={!correct && answered}
-            to={next}>
-            {text.answerButton.continue}
-          </ContinueButton>
-
-          : <ContinueButton
-            correct={correct && answered}
-            incorrect={!correct && answered}
-            to={url}
-          >
-            {text.answerButton.end}
-          </ContinueButton>
-        )}
+      ) : answered && next ? (
+        <ContinueButton
+          correct={correct && answered}
+          incorrect={!correct && answered}
+          to={next}
+        >
+          {text.answerButton.continue}
+        </ContinueButton>
+      ) : (
+        <ContinueButton
+          correct={correct && answered}
+          incorrect={!correct && answered}
+          to={url}
+        >
+          {text.answerButton.end}
+        </ContinueButton>
+      )}
     </FooterContainer>
   )
-}
+};
 
 export default Footer

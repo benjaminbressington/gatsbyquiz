@@ -4,18 +4,18 @@
  * on close
  */
 
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-const UrlContext = React.createContext()
+const UrlContext = React.createContext();
 
-function UrlContextProvider (props) {
-  const [url, setUrl] = useState('/')
-  let value = { url, setUrl }
+function UrlContextProvider(props) {
+  const [url, setUrl] = useState("/");
+  let value = { url, setUrl };
 
   return (
     <UrlContext.Provider value={value}>{props.children}</UrlContext.Provider>
-  )
+  );
 }
-let UrlContextConsumer = UrlContext.Consumer
+let UrlContextConsumer = UrlContext.Consumer;
 
-export { UrlContext, UrlContextProvider, UrlContextConsumer }
+export { UrlContext, UrlContextProvider, UrlContextConsumer };

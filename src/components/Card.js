@@ -1,10 +1,10 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { css } from '@emotion/core'
-import { media } from '../tokens'
+import React from "react";
+import { Link } from "gatsby";
+import { css } from "@emotion/core";
+import { media } from "../tokens";
 
 const Card = ({
-  backgroundColor = '#E75248',
+  backgroundColor = "#E75248",
   image,
   title,
   description,
@@ -12,7 +12,7 @@ const Card = ({
 }) => (
   <Link
     to={link}
-    aria-label={`View ${ title }`}
+    aria-label={`View ${title}`}
     css={css`
       * {
         color: white;
@@ -30,11 +30,11 @@ const Card = ({
         padding: 20px 40px 0 40px;
         font-size: 16px;
         opacity: 0.85;
-        @media ${ media.medium } {
+        @media ${media.medium} {
           padding: 20px 20px 0 40px;
         }
       }
-      @media ${ media.medium } {
+      @media ${media.medium} {
           flex-direction: column;
           align-items: center;
         }
@@ -44,7 +44,7 @@ const Card = ({
           margin-top: 20px;
         }
       }
-      background: ${ backgroundColor };
+      background: ${backgroundColor};
       overflow: hidden;
       border-radius: 5px;
       margin-bottom: '0';
@@ -61,6 +61,6 @@ const Card = ({
       {description && <p>{description}</p>}
     </div>
   </Link>
-)
+);
 
-export default Card
+export default Card;

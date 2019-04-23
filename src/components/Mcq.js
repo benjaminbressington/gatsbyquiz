@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
-import { QuizContext } from '../contexts/QuizContext'
-import RadioItem from './RadioItem'
-import styled from '@emotion/styled'
-import { media } from '../tokens'
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import { QuizContext } from '../contexts/QuizContext';
+import RadioItem from './RadioItem';
+import styled from '@emotion/styled';
+import { media } from '../tokens';
 
 const RadioContainer = styled.div`
   margin: auto 0;
@@ -17,7 +17,9 @@ const RadioContainer = styled.div`
 `
 
 const Mcq = ({ answers, next }) => {
-  const { selected, setSelected, answered, setCorrect } = useContext(QuizContext)
+  const { selected, setSelected, answered, setCorrect } = useContext(
+    QuizContext
+  )
 
   const handleChange = answer => {
     const selectedAnswer = answers.filter(ans => ans.value === answer)
@@ -45,16 +47,16 @@ const Mcq = ({ answers, next }) => {
       ))}
     </RadioContainer>
   )
-}
+};
 
 Mcq.propTypes = {
   answers: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string.isRequired,
       correct: PropTypes.bool.isRequired,
-      feedback: PropTypes.srting,
+      feedback: PropTypes.srting
     })
-  ).isRequired,
+  ).isRequired
 }
 
 export default Mcq

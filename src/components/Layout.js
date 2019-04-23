@@ -1,18 +1,15 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { graphql, StaticQuery } from 'gatsby'
-import { css } from '@emotion/core'
-import GlobalStyles from '../components/GlobalStyles'
+import React from "react";
+import Helmet from "react-helmet";
+import { graphql, StaticQuery } from "gatsby";
+import { css } from "@emotion/core";
+import GlobalStyles from "../components/GlobalStyles";
 
-function Layout ({
-  data,
-  children,
-}) {
+function Layout({ data, children }) {
   const {
     site: {
-      siteMetadata: { description, keywords, title },
-    },
-  } = data
+      siteMetadata: { description, keywords, title }
+    }
+  } = data;
 
   return (
     <>
@@ -20,8 +17,8 @@ function Layout ({
       <Helmet
         title={title}
         meta={[
-          { name: 'description', content: description },
-          { name: 'keywords', content: keywords.join() },
+          { name: "description", content: description },
+          { name: "keywords", content: keywords.join() }
         ]}
       >
         <html lang="en" />
@@ -41,10 +38,10 @@ function Layout ({
         {children}
       </div>
     </>
-  )
+  );
 }
 
-export default function LayoutWithSiteData (props) {
+export default function LayoutWithSiteData(props) {
   return (
     <StaticQuery
       query={graphql`
@@ -61,5 +58,5 @@ export default function LayoutWithSiteData (props) {
       `}
       render={data => <Layout data={data} {...props} />}
     />
-  )
+  );
 }
