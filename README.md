@@ -1,7 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b6e54a57-aa24-436f-be39-f075b842f3bb/deploy-status)](https://app.netlify.com/sites/inspiring-kare-1888f6/deploys)
 
 # :grapes: gatsby-starter-quiz
-Create rich quizzes with Gatsby & Mdx. No need of database or headless CMS. Manage your data directly in your Mdx file's frontmatter and write your content in the body. Customize your HTML tags, use other's react components or write your owns. Navigation will be automatically created between each question.
+Create rich quizzes with Gatsby & Mdx. No need of database or headless CMS. Manage your data directly in your Mdx file's frontmatter and write your content in the body. Customize your HTML tags, use react components from a library or write your owns. Navigation will be automatically created between each question.
 
 ➡️ **[See a live example](https://gatsby-starter-quiz.netlify.com//)**
 
@@ -25,15 +25,15 @@ $ yarn
 
 ### :one: Files
 Edit your quizzes inside the `/quizzes` folder:
-- create a folder for each quiz
-- create a .mdx file for each question
+- Create a folder for each quiz
+- Create a .mdx file for each question
 
 ### :two: Frontmatter
-- put your answers in the frontmatter. It's just an array of objects.
+- Put your answers in the frontmatter. It's just an array of objects.
   - Each object is an answer with 2 keys:
-    - value: a string (the text that will be displayed)
-    - correct: a boolean (true, if correct)
-- give an index to your question to put them in a specific order (must be a string!)
+    - Value: a string (the text that will be displayed)
+    - Correct: a boolean (true, if correct)
+- Give an index to your question to put them in a specific order (must be a string!)
 
 ```md
 ---
@@ -60,7 +60,7 @@ answers: [
 ```
 
 ### :three: Body
-- write your question and let your creativity take the power with MDX
+- Write your question and let your creativity take the power with MDX
 
 Look at the examples in the quizzes folder to see how you can use React within a Markdown file (That's MDX!).
 For a full explanation, read the MDX docs and the gatsby-MDX implementation.
@@ -78,8 +78,8 @@ In the `/pages/index.js` file create a link to your quiz with the Card component
 ```
 
 ### :five: Deploy
-- create a repository on github with your project
-- deploy it on [Netlify](https://www.netlify.com/)
+- Create a repository on github with your project
+- Deploy it on [Netlify](https://www.netlify.com/)
 
 ## :art: Configuration
-You can change the feedback text, the footer colors in the appropriate files under the `/tokens` folder.
+You can change the feedback text or the footer colors in the appropriate files under the `/tokens` folder.
