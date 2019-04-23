@@ -27,7 +27,10 @@ $ yarn
 Edit your quizzes inside the `quizzes` folder:
 - create a folder for each quiz
 - create a .mdx file for each question
-- put your answers in the frontmatter
+- put your answers in the frontmatter. It's just an array of objects.
+  - Each object is an answer with 2 keys:
+    - value: a string (the text that will be displayed)
+    - correct: a boolean (true, if correct)
 - give an index to your question to put them in a specific order
 - write your question
 
