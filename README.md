@@ -63,7 +63,7 @@ answers: [
 - Write your question and let your creativity take the power with MDX
 
 Look at the examples in the quizzes folder to see how you can use React within a Markdown file (That's MDX!).
-For a full explanation, read the MDX docs and the gatsby-MDX implementation.
+For a full explanation, read the [MDX docs](https://mdxjs.com/) and the [gatsby-MDX](https://www.gatsbyjs.org/packages/gatsby-mdx/) implementation.
 
 ### :four: Link it from the home page
 
