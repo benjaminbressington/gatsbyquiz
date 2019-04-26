@@ -1,15 +1,15 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { css } from "@emotion/core";
-import Layout from "components/Layout";
-import Card from "components/Card";
-import QuizLink from "components/QuizLink";
-import { media } from "../tokens";
+import React from 'react'
+import { graphql } from 'gatsby'
+import { css } from '@emotion/core'
+import Layout from 'components/Layout'
+import Card from 'components/Card'
+import QuizLink from 'components/QuizLink'
+import { media } from '../tokens'
 
-export default function Index() {
+export default function Index () {
   return (
     <Layout>
-      <div style={{ height: "60px" }}>
+      <div style={{ height: '60px' }}>
         <h1>Ultimate Quizzes</h1>
       </div>
       <div
@@ -17,7 +17,7 @@ export default function Index() {
           display: grid;
           grid-template-columns: 1fr;
           grid-gap: 20px;
-          @media ${media.medium} {
+          @media ${ media.medium } {
             grid-template-columns: repeat(auto-fit, 300px);
           }
         `}
@@ -42,5 +42,5 @@ export default function Index() {
         />
       </div>
     </Layout>
-  );
+  )
 }
