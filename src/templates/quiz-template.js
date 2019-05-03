@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import { graphql } from "gatsby";
+import React from 'react'
+import { graphql } from 'gatsby'
 import {
-  QuizContextProvider,
-  QuizContextConsumer
-} from "../contexts/QuizContext";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
-import GlobalStyles from "../components/GlobalStyles";
-import Mcq from "../components/Mcq";
-import Footer from "../components/Footer";
+  QuizContextProvider
+} from '../contexts/QuizContext'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import GlobalStyles from '../components/GlobalStyles'
+import Mcq from '../components/Mcq'
+import Footer from '../components/Footer'
 // import Score from '../components/Score'
-import CloseButton from "../components/CloseButton";
-import styled from "@emotion/styled";
-import { media } from "../tokens";
+import CloseButton from '../components/CloseButton'
+import styled from '@emotion/styled'
+import { media } from '../tokens'
 // import Layout from '../components/layout'
 
 const Container = styled.div`
@@ -19,7 +18,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-`;
+`
 
 const QuizHeader = styled.div`
   opacity: 0.8;
@@ -28,11 +27,11 @@ const QuizHeader = styled.div`
   background: white;
   position: sticky;
   top: 0px;
-`;
+`
 const QuizBody = styled.div`
   /*important for the pre overflow: auto*/
   width: 100%;
-  @media ${media.medium} {
+  @media ${ media.medium } {
     width: 60%;
     padding-top: 2rem;
     padding-bottom: 150px;
@@ -43,7 +42,7 @@ const QuizBody = styled.div`
   h4 {
     line-height: 1.5;
     font-size: 0.8rem;
-    @media ${media.medium} {
+    @media ${ media.medium } {
       padding-bottom: 2rem;
       font-size: 1.1rem;
     }
@@ -51,22 +50,22 @@ const QuizBody = styled.div`
   p {
     font-size: 1rem;
     line-height: 1.5;
-    @media ${media.medium} {
+    @media ${ media.medium } {
       font-size: 1.1rem;
     }
   }
-`;
+`
 const QuizFooter = styled.div`
   width: 100%;
   bottom: 0;
   left: 0;
   right: 0;
-`;
+`
 
 const QuizTemplate = ({ data, pageContext }) => {
-  const { body } = data.mdx.code;
-  const { answers } = data.mdx.frontmatter;
-  const { prev, next } = pageContext;
+  const { body } = data.mdx.code
+  const { answers } = data.mdx.frontmatter
+  const { prev, next } = pageContext
   return (
     <Container>
       <GlobalStyles />
@@ -87,8 +86,8 @@ const QuizTemplate = ({ data, pageContext }) => {
         </QuizContextProvider>
       </QuizBody>
     </Container>
-  );
-};
+  )
+}
 
 export const query = graphql`
   query QuestionByquizSlug($quizSlug: String!) {
@@ -109,6 +108,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default QuizTemplate;
+export default QuizTemplate
