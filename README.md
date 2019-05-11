@@ -5,9 +5,10 @@ Create rich quizzes with Gatsby & Mdx. No need of database or headless CMS. Mana
 
 ➡️ **[See a live example](https://gatsby-starter-quiz.netlify.com//)**
 
-Build with gatsby-starter-quiz
+## Build with gatsby-starter-quiz 🚀
 Inspired by this starter or developing a fork? You can submit a pull request and show your work here:
 [pousse.ch](https://pousse.ch) - Online material for swiss and french middle school.
+
 ## Installation
 
 ### With [`gatsby-cli`](https://www.npmjs.com/package/gatsby-cli)
