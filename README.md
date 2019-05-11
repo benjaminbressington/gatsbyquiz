@@ -7,7 +7,7 @@ Create rich quizzes with Gatsby & Mdx. No need of database or headless CMS. Mana
 
 ## Build with gatsby-starter-quiz 🚀
 Inspired by this starter or developing a fork? You can submit a pull request and show your work here:
-[pousse.ch](https://pousse.ch) - Online material for swiss and french middle school.
+- [pousse.ch](https://pousse.ch) - Online material for swiss and french middle school.
 
 ## Installation
 
